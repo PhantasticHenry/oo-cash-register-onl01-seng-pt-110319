@@ -1,5 +1,7 @@
 require 'pry'
 
+class CashRegister
+
 attr_accessor :total, :discount, :last_amount
 
   def initialize(discount = 0)
@@ -11,7 +13,6 @@ attr_accessor :total, :discount, :last_amount
   def add_item(title, price, quantity = 1)
     @total += price * quantity
     quantity.times do
-      # binding.pry
       self.items << title
     end 
     @last_amount = price * quantity
